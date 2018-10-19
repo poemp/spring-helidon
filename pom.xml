@@ -44,6 +44,32 @@
             <artifactId>logback-access</artifactId>
             <version>1.2.3</version>
         </dependency>
+
+
+        <!--JAX-RS-->
+        <dependency>
+            <groupId>io.helidon.webserver</groupId>
+            <artifactId>helidon-webserver-jersey</artifactId>
+        </dependency>
+
+
+        <!-- json support  -->
+        <dependency>
+            <groupId>io.helidon.webserver</groupId>
+            <artifactId>helidon-webserver-json</artifactId>
+        </dependency>
+
+        <!--Tracing Support-->
+        <dependency>
+            <groupId>io.helidon.webserver</groupId>
+            <artifactId>helidon-webserver-zipkin</artifactId>
+        </dependency>
+
+        <!-- helidon security -->
+        <dependency>
+            <groupId>io.helidon.security</groupId>
+            <artifactId>helidon-security</artifactId>
+        </dependency>
     </dependencies>
 
     <dependencyManagement>

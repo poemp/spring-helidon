@@ -27,7 +27,15 @@ java helidon 框架
  https://helidon.io/docs/latest/#/getting-started/03_managing-dependencies
 ```
 
-## for my study
+## 图片访问
 ```
-https://helidon.io/docs/latest/#/webserver/05_error-handling
+    /pictures/pics.jpg
+```
+## jax-rs 访问
+```
+    /jersey/hello
+```
+## json suport
+```
+    /json
 ```
