@@ -24,7 +24,7 @@ java helidon 框架
 ## helidon start
 
 ```
- https://helidon.io/docs/latest/#/getting-started/03_managing-dependencies
+ https://helidon.io/docs/latest/#/getting-started
 ```
 
 ## 图片访问
