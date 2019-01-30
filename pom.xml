@@ -70,6 +70,13 @@
             <groupId>io.helidon.security</groupId>
             <artifactId>helidon-security</artifactId>
         </dependency>
+
+
+        <!-- 调用链监控 Zipkin -->
+        <dependency>
+            <groupId>io.helidon.webserver</groupId>
+            <artifactId>helidon-webserver-zipkin</artifactId>
+        </dependency>
     </dependencies>
 
     <dependencyManagement>

@@ -1,9 +1,9 @@
 package org.poem;
 
 import io.helidon.config.Config;
-import io.helidon.webserver.Routing;
 import io.helidon.webserver.ServerConfiguration;
 import io.helidon.webserver.WebServer;
+import io.helidon.webserver.zipkin.ZipkinTracerBuilder;
 import org.poem.route.RouteHandle;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -22,26 +22,28 @@ public class WebServiceApplication {
     private static final Logger logger = LoggerFactory.getLogger(WebServiceApplication.class);
 
 
-
     /**
      * get server config
      *
      * @return
      */
     private static ServerConfiguration getServerConfiguration() throws UnknownHostException {
-        return  ServerConfiguration.builder()
+        return ServerConfiguration.builder()
                 .bindAddress(InetAddress.getLocalHost())
                 .port(8080)
+                .tracer(ZipkinTracerBuilder.forService("spring-helidon")
+                        .zipkin("http://127.0.0.1:9411")
+                        .build())
                 .build();
     }
 
-
     /**
      * or get by application.cnf
+     *
      * @return
      */
-    private static ServerConfiguration getByApplicationConf(){
-        return  ServerConfiguration.fromConfig(
+    private static ServerConfiguration getByApplicationConf() {
+        return ServerConfiguration.fromConfig(
                 Config.builder().sources(Config.loadSources(new Supplier() {
                     @Override
                     public Object get() {
@@ -54,6 +56,7 @@ public class WebServiceApplication {
 
     /**
      * start app
+     *
      * @param args
      * @throws Exception
      */
